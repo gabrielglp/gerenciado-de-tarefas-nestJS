@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "env": {
+    "DATABASE_URL": "postgresql://postgres:35661866@localhost:5432/gerenciador-de-tarefas?schema=public",
+    "JWT_SECRET": "25900d289b96e671484e7777a80f46bd"
+  },
+  "builds": [
+    {
+      "src": "src/main.ts",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "src/main.ts",
+      "methods": ["GET", "POST", "PUT", "DELETE"]
+    }
+  ]
+}
